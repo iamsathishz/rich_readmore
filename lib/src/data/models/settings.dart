@@ -21,7 +21,7 @@ abstract class ReadMoreSettings {
   final Locale? locale;
 
   /// The [TextScaler] to be used for the text.
-  final TextScaler? textScaler;
+  final double? textScaler;
 
   /// The semantics label to be used for accessibility purposes.
   final String? semanticsLabel;

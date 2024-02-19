@@ -95,8 +95,8 @@ class _RichReadMoreTextState extends State<RichReadMoreText> {
   /// A getter for the [TextScaler] to be used for the text.
   /// If the [settings.textScaler] is null, it will use the
   /// `MediaQuery.textScalerOf(context)`.
-  TextScaler get textScaler =>
-      widget.settings.textScaler ?? MediaQuery.textScalerOf(context);
+  double get textScaler =>
+      widget.settings.textScaler ?? MediaQuery.textScaleFactorOf(context);
 
   @override
   void initState() {
@@ -142,7 +142,7 @@ class _RichReadMoreTextState extends State<RichReadMoreText> {
               text: actionText,
               textAlign: textAlign,
               textDirection: widget.settings.textDirection ?? TextDirection.rtl,
-              textScaler: textScaler,
+              textScaleFactor: textScaler,
               maxLines: widget.settings is LineModeSettings
                   ? (widget.settings as LineModeSettings).trimLines
                   : null,
@@ -192,7 +192,7 @@ class _RichReadMoreTextState extends State<RichReadMoreText> {
               textDirection: widget.settings.textDirection,
               softWrap: true,
               overflow: TextOverflow.clip,
-              textScaler: textScaler,
+              textScaleFactor: textScaler,
             );
           },
         ),
